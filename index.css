@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#moodLogs{
+    position: absolute;
+    right: 50px;
+    top: 60px;
+    height: 40px;
+    width: 100px;
+}
+#heading{
+    text-align: center;
+    margin-block: 50px ;
+    font-size: 50px;
+}
+.moodEmojis{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    /* height: 50vh; */
+    margin: 100px;
+}
+.emojis{
+    width: 100px;
+    transition: transform 0.5s ease-in-out;
+}
+.emojis:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
