@@ -10,6 +10,8 @@ body {
 .calenderWrapper{
     width: 90%;
     margin-block:40px;
+    display: none;
+
 }
 .months{
     display: flex;

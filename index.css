@@ -34,3 +34,23 @@
     cursor: pointer;
     transform: scale(1.2);
 }
+#showBtn{
+    display: flex;
+    justify-content: center;
+}
+#showMoodHistory{
+    border: none;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+    font-size:20px ;
+    font-weight: 530;
+}
+#showMoodHistory:hover{
+    cursor: pointer;
+    border: 2px solid red;
+    color: #520a6e;
+}
+.emojiInHeading{
+    width: 50px;
+}

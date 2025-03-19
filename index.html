@@ -5,44 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mood Tracker</title>
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="calender.css">
+    <link rel="stylesheet" href="calender.css" />
   </head>
   <body>
-    <header>
+    <header id="head">
       <h1 id="heading">Mood Tracker</h1>
       <h3 id="ques">How's Your Mood Today ?</h3>
+      <div class="todaysMood"></div>
     </header>
     <div class="main">
       <div class="moodEmojis">
-        <img src="/Assets/happy.svg" alt="happy" id="happy" class="emojis" />
-        <img src="/Assets/sad.svg" alt="sad" id="sad" class="emojis" />
+        <img
+          src="/Assets/happy.svg"
+          alt="happy"
+          id="happy"
+          class="emojis"
+          title="Happy"
+        />
+        <img
+          src="/Assets/sad.svg"
+          alt="sad"
+          id="sad"
+          class="emojis"
+          title="Sad"
+        />
         <img
           src="/Assets/verySad.svg"
           alt="verySad"
           id="verySad"
           class="emojis"
+          title="verySad"
         />
         <img
           src="/Assets/revenge.svg"
           alt="revenge"
           id="revenge"
           class="emojis"
+          title="Revenge"
         />
         <img
           src="/Assets/excited.svg"
           alt="excited"
           id="excited"
           class="emojis"
+          title="Excited"
         />
         <img
           src="/Assets/neutral.svg"
           alt="neutral"
           id="neutral"
           class="emojis"
+          title="Neutral"
+        />
+        <img
+          src="/Assets/Angry.svg"
+          alt="Angry"
+          id="anger"
+          class="emojis"
+          title="Angry"
+        />
+        <img
+          src="/Assets/grateful.svg"
+          alt="grateful"
+          id="grateful"
+          class="emojis"
+          title="Grateful"
+        />
+        <img
+          src="/Assets/upset.svg"
+          alt="upset"
+          id="upset"
+          class="emojis"
+          title="Upset"
         />
       </div>
+      <div id="showBtn">
+        <button id="showMoodHistory">Show Mood History</button>
+      </div>
     </div>
-    <div class="todaysMood"></div>
 
     <div class="calenderWrapper">
       <div class="months">
@@ -62,9 +102,7 @@
           <li>Friday</li>
           <li>Saturday</li>
         </ul>
-        <ol class="days">
-         
-        </ol>
+        <ol class="days"></ol>
       </div>
     </div>
   </body>
