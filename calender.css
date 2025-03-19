@@ -75,6 +75,8 @@ body {
   display: flex;
   align-items: center;
   color: #f51515;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .days li:hover {
@@ -83,4 +85,97 @@ body {
 }
 .days li.active:hover {
   background-color: royalblue;
+}
+
+
+@media (max-width: 1024px) {
+  .currentDate {
+    font-size: 30px;
+  }
+
+  .icons span {
+    font-size: 40px;
+  }
+
+  .days {
+    grid-template-rows: repeat(6, 80px); /* Reduce height of grid */
+  }
+
+  .days li {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calenderWrapper {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .currentDate {
+    font-size: 28px;
+  }
+
+  .icons span {
+    font-size: 35px;
+  }
+  .weekDays li::before {
+    content: attr(data-short);
+    display: block;
+  }
+  .weekDays li span {
+    display: none;
+  }
+  .weekDays li {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .days {
+    grid-template-rows: repeat(6, 100px);
+  }
+
+  .days li {
+    font-size: 18px;
+    padding: 8px;
+  }
+  .emojiInHeading{
+    width: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .currentDate {
+    font-size: 24px;
+  }
+
+  .icons span {
+    font-size: 30px;
+  }
+  .weekDays li::before {
+    content: attr(data-short);
+    display: block;
+  }
+  .weekDays li span {
+    display: none;
+  }
+  .weekDays li {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .days {
+    grid-template-rows: repeat(6, 60px);
+  }
+
+  .days li {
+    font-size: 16px;
+    padding: 6px;
+  }
+  .moodText{
+    display: none;
+  }
+  .emojiInHeading{
+    width: 20px;
+  }
 }

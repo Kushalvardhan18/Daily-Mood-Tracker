@@ -62,7 +62,7 @@ function calenderRender() {
         // If isToday is present date then add active class to it
         let isToday = i === date.getDate() && currMonth === new Date().getMonth() && currYear === new Date().getFullYear() ? "active" : "";
 
-        dateListTag += `<li class="${isToday}">${i} ${moodText} ${imageTag}</li>`;
+        dateListTag += `<li class="${isToday}">${i} <span class="moodText"> ${moodText} </span>${imageTag}</li>`;
     }
 
     // Inactive dates for next month
@@ -136,7 +136,7 @@ function recentUpdates() {
 
 }
 
-function changeInCalender() {
+function changeInCalender(icon) {
     // if icon.id is equals to "prev" then  currMonth = currMonth-1
     currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
 
@@ -155,7 +155,9 @@ function changeInCalender() {
 
 const prevNext = document.querySelectorAll(".icons span");
 prevNext.forEach((icon) => {
-    icon.addEventListener("click", changeInCalender)
+    icon.addEventListener("click", ()=>{
+        changeInCalender(icon)
+    })
 });
 
 

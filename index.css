@@ -27,6 +27,7 @@
   gap: 50px;
   justify-content: center;
   margin: 20px;
+  flex-wrap: wrap; 
 }
 .emojis {
   width: 100px;
@@ -103,4 +104,97 @@
 .textInRecent{
   font-weight: 500;
   font-size: 25px;
+}
+
+@media (max-width: 1024px) {
+  #heading {
+    font-size: 40px;
+  }
+
+  .moodEmojis {
+    gap: 30px;
+  }
+
+  .emojis {
+    width: 80px;
+  }
+
+  .recentMoodHistory {
+    font-size: 20px;
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #heading {
+    font-size: 35px;
+  }
+
+  .moodEmojis {
+    gap: 20px;
+  }
+
+  .emojis {
+    width: 70px;
+  }
+
+  #showMoodHistory {
+    font-size: 18px;
+    padding: 8px 15px;
+  }
+
+  .recentMoodHistory {
+    font-size: 18px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .emojiInRecent {
+    width: 25px;
+  }
+
+  .textInRecent {
+    font-size: 20px;
+  }
+
+  .lastFiveDaysData {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  #heading {
+    font-size: 30px;
+  }
+
+  .moodEmojis {
+    gap: 15px;
+  }
+
+  .emojis {
+    width: 60px;
+  }
+
+  #showMoodHistory {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  .recentMoodHistory {
+    font-size: 16px;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .emojiInRecent {
+    width: 20px;
+  }
+
+  .textInRecent {
+    font-size: 18px;
+  }
+
+  .lastFiveDaysData {
+    width: 90%;
+  }
 }
