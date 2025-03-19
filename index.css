@@ -47,11 +47,13 @@
   border-radius: 10px;
   font-size: 20px;
   font-weight: 530;
+  border: 1px solid white;
+
 }
 #showMoodHistory:hover {
   cursor: pointer;
-  border: 2px solid red;
-  color: #520a6e;
+  border: 1px solid red;
+  color: #24e213;
 }
 .emojiInHeading { 
   width: 40px;
@@ -66,4 +68,39 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.lastFiveDaysData{
+  margin-top:50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+  margin-block:20px ;
+}
+.recentMoodHistory{
+  width: 100%;
+  padding:20px 15px;
+  font-size: 25px;
+  font-weight: 500;
+  background-color:rgb(213, 97, 213);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recentMood{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.emojiInRecent{
+  width: 30px;
+}
+.textInRecent{
+  font-weight: 500;
+  font-size: 25px;
 }
