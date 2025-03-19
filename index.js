@@ -23,26 +23,33 @@ const ques = document.querySelector("#ques")
 const todaysMood = document.querySelector(".todaysMood")
 moodEmojis.forEach((emoji) => {
     emoji.addEventListener("click", () => {
-        ques.remove()
-        const emojisText = emoji.alt
-        todaysMood.innerHTML=""
-        const mood = document.createElement("h3")
-        const moodEmoji = document.createElement("img")
-        mood.innerText = `Today's Mood :${emojisText}`
-        moodEmoji.src = emoji.src
-        moodEmoji.classList.add("emojiInHeading")
-        mood.append(moodEmoji)
-        todaysMood.append(mood)
+       emojiDataFn(emoji)
     })
 })
+function emojiDataFn(){
+    if(ques){
+        ques.remove()
 
+    }
+    todaysMood.innerHTML = ""
+    const emojisText = emoji.title
+    const mood = document.createElement("h3")
+    const moodEmoji = document.createElement("img")
+    mood.innerText = `Today's Mood : ${emojisText}`
+    mood.style.color = "white"
+    moodEmoji.src = emoji.src
+    moodEmoji.classList.add("emojiInHeading")
+    todaysMood.append(mood, moodEmoji)
+    // todaysMood.append(moodEmoji)
+    calenderRender(emojisText, emoji.src)
+}
 
 
 let date = new Date()
 let currYear = date.getFullYear()
 const currentDate = document.querySelector(".currentDate")
 let currMonth = date.getMonth()
-function calenderRender() {
+function calenderRender(mood, emoji) {
     const monthNames = [
         "Jan",
         "Feb",
@@ -70,7 +77,17 @@ function calenderRender() {
         dateListTag += `<li>${lastDateOfLastMonth - i + 1}</li>`
     }
     for (let i = 1; i <= lastDateOfMonth; i++) {
-        dateListTag += `<li>${i}</li>`
+
+        let imageTag = "";
+        
+        let isToday = i === date.getDate() && currMonth === new Date().getMonth() && currYear === new Date().getFullYear() ? "active" : ""
+        if (isToday) {
+            imageTag = `<img src="${emoji.src}" alt="Mood Emoji" class="emojiInHeading">`; // Create an image tag string
+            dateListTag += `<li class="${isToday}">${i} ${mood} ${imageTag}</li>`;
+        } else {
+            dateListTag += `<li class="${isToday}">${i}</li>`;
+        }
+
     }
 
     for (let i = lastDayOfMonth; i < 6; i++) {

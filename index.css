@@ -1,56 +1,69 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-#moodLogs{
-    position: absolute;
-    right: 50px;
-    top: 60px;
-    height: 40px;
-    width: 100px;
+#moodLogs {
+  position: absolute;
+  right: 50px;
+  top: 60px;
+  height: 40px;
+  width: 100px;
 }
-#heading{
-    text-align: center;
-    margin-block: 20px ;
-    font-size: 50px;
-    color: white;
+#heading {
+  /* text-align: center; */
+  margin-block: 20px;
+  font-size: 50px;
+  color: white;
 }
-#ques{
-    text-align: center;
+#ques {
+  text-align: center;
+  padding: 10px 20px
 }
-.moodEmojis{
-    display: flex;
-    gap: 50px;
-    justify-content: center;
-    margin: 20px;
+.moodEmojis {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin: 20px;
 }
-.emojis{
-    width: 100px;
-    transition: transform 0.5s ease-in-out;
+.emojis {
+  width: 100px;
+  transition: transform 0.5s ease-in-out;
 }
-.emojis:hover{
-    cursor: pointer;
-    transform: scale(1.2);
+.emojis:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
-#showBtn{
-    display: flex;
-    justify-content: center;
+#showBtn {
+  display: flex;
+  justify-content: center;
 }
-#showMoodHistory{
-    border: none;
-    padding: 10px 20px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 10px;
-    font-size:20px ;
-    font-weight: 530;
+#showMoodHistory {
+  border: none;
+  padding: 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 530;
 }
-#showMoodHistory:hover{
-    cursor: pointer;
-    border: 2px solid red;
-    color: #520a6e;
+#showMoodHistory:hover {
+  cursor: pointer;
+  border: 2px solid red;
+  color: #520a6e;
 }
-.emojiInHeading{
-    width: 50px;
+.emojiInHeading { 
+  width: 40px;
+}
+#head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.todaysMood {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
