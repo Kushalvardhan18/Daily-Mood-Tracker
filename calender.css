@@ -22,6 +22,8 @@ body {
 }
 .currentDate {
   font-size: 36px;
+  color:teal;
+  font-weight: 500;
 }
 .icons span {
   font-size: 50px;
@@ -69,6 +71,7 @@ body {
   color: #aaa;
   display: flex;
   align-items: center;  
+  gap: 5px;
 
 }
 .days li.active {
