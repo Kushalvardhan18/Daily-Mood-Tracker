@@ -73,6 +73,8 @@ function calenderRender() {
     days.innerHTML = dateListTag;
 }
 function emojiDataFn(emoji) {
+let date = new Date();
+
     if (ques) {
         ques.remove();
     }
@@ -93,8 +95,8 @@ function emojiDataFn(emoji) {
     todaysMood.append(mood, moodEmoji);
 
     // Store mood in localStorage with date as the key
-    // const todayKey = `${currYear}-${currMonth + 1}-${date.getDate()}`;
-    const todayKey = `${currYear}-${String(currMonth + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    const todayKey = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+    // const todayKey = `${currYear}-${String(currMonth + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 
     moodHistory[todayKey] = { mood: emojisText, emoji: emoji.src };
     localStorage.setItem("moodHistory", JSON.stringify(moodHistory));
