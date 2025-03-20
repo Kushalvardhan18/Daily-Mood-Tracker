@@ -1,5 +1,5 @@
 // Accessing moodHistory from the Local Storage
-// let moodHistory = JSON.parse(localStorage.getItem("moodHistory")) || {};
+let moodHistory = JSON.parse(localStorage.getItem("moodHistory")) || {};
 
 //Declaring Variables
 const calenderWrapper = document.querySelector(".calenderWrapper");
@@ -97,7 +97,7 @@ function emojiDataFn(emoji) {
     const todayKey = `${currYear}-${String(currMonth + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
 
     moodHistory[todayKey] = { mood: emojisText, emoji: emoji.src };
-    // localStorage.setItem("moodHistory", JSON.stringify(moodHistory));
+    localStorage.setItem("moodHistory", JSON.stringify(moodHistory));
 
     calenderRender();
 }
