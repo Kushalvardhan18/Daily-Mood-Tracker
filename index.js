@@ -106,39 +106,44 @@ let date = new Date();
 
 const lastFiveDaysData = document.querySelector(".lastFiveDaysData")
 function recentUpdates() {
-    // If render again then clearing old rendered data.
-    lastFiveDaysData.innerHTML = "";
+    lastFiveDaysData.innerHTML = ""; // Clear previous data
 
-    let currDate = date.getDate()
-    for (let i = currDate; i > currDate - 5; i--) {
-        //creating required elements
-        const moodOfTheDay = document.createElement('span')
-        let recentMoodContainer = document.createElement("div")
-        let imageTag = document.createElement("img")
-        let moodText = document.createElement("h3")
+    let tempDate = new Date(); // used current date 
+    for (let i = 0; i < 5; i++) {
+        let day = tempDate.getDate();
+        let month = tempDate.getMonth() + 1;
+        let year = tempDate.getFullYear();
 
+        let dateKey = `${year}-${month}-${day}`;
+        let moodForDay = moodHistory[dateKey] || { mood: "", emoji: "" };
 
-        let dateKey = `${currYear}-${currMonth + 1}-${i}`
-        let moodForDay = moodHistory[dateKey] ? moodHistory[dateKey] : { mood: "", emoji: "" }
+        // Creating elements
+        const moodOfTheDay = document.createElement("span");
+        let recentMoodContainer = document.createElement("div");
+        let imageTag = document.createElement("img");
+        let moodText = document.createElement("h3");
 
         if (moodForDay.emoji) {
-            imageTag.src = moodForDay.emoji
+            imageTag.src = moodForDay.emoji;
             imageTag.classList.add("emojiInRecent");
         }
-        recentMoodContainer.classList.add("recentMood")
+        
+        recentMoodContainer.classList.add("recentMood");
+        moodText.classList.add("textInRecent");
+        moodText.innerText = moodForDay.mood ? `Mood : ${moodForDay.mood}` : "";
 
-        moodText.classList.add("textInRecent")
-        moodText.innerText = moodForDay.mood ? `Mood : ${moodForDay.mood}` : ""
+        moodOfTheDay.classList.add("recentMoodHistory");
+        moodOfTheDay.innerText = `${day}/${month < 10 ? "0" + month : month}/${year}`;
 
-        moodOfTheDay.classList.add("recentMoodHistory")
-        moodOfTheDay.innerText = `${i}/${currMonth < 10 ? "0" + (currMonth + 1) : (currMonth + 1)}/${currYear}`
+        recentMoodContainer.append(moodText, imageTag);
+        moodOfTheDay.append(recentMoodContainer);
+        lastFiveDaysData.append(moodOfTheDay);
 
-        recentMoodContainer.append(moodText, imageTag)
-        moodOfTheDay.append(recentMoodContainer)
-        lastFiveDaysData.append(moodOfTheDay)
+        // Move to the previous day
+        tempDate.setDate(tempDate.getDate() - 1);
     }
-
 }
+
 
 function changeInCalender(icon) {
     // if icon.id is equals to "prev" then  currMonth = currMonth-1
