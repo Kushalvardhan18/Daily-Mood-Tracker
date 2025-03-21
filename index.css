@@ -18,9 +18,11 @@
   font-size: 50px;
   color: white;
 }
-#ques {
+#ques{
   text-align: center;
-  padding: 10px 20px
+  padding: 10px 20px;
+  
+  
 }
 .moodEmojis {
   display: flex;
